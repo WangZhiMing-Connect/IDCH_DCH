@@ -5,21 +5,21 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DBUTIL {
-	// Éè¶¨Êı¾İ¿âÇı¶¯£¬Êı¾İ¿âÁ¬½ÓµØÖ·£¬¶Ë¿Ú£¬Ãû³Æ£¬ÓÃ»§Ãû£¬ÃØÃÜ
+	// è®¾å®šæ•°æ®åº“é©±åŠ¨ï¼Œæ•°æ®åº“è¿æ¥åœ°å€ï¼Œç«¯å£ï¼Œåç§°ï¼Œç”¨æˆ·åï¼Œç§˜å¯†
 
 	private static final String driverName = "oracle.jdbc.driver.OracleDriver";
-	private static final String url = "jdbc:oracle:thin:@192.168.137.111:1521:orcl";
+	private static final String url = "jdbc:oracle:thin:@localhost:1521:orcl";
 	private static final String user = "scott";
-	private static final String password = "11";
+	private static final String password = "*******";
 	private static Connection conn = null;
 
 	public static Connection getConnect() {
 		try {
-			// 1.¼ÓÔØÊı¾İ¿âÇı¶¯
+			// 1.åŠ è½½æ•°æ®åº“é©±åŠ¨
 			Class.forName(driverName);
-			//2.»ñµÃÊı¾İ¿âÁ¬½Ó
+			//2.è·å¾—æ•°æ®åº“è¿æ¥
 			conn = DriverManager.getConnection(url, user, password);
-			//System.out.println("Á¬½Ó³É¹¦");
+			//System.out.println("è¿æ¥æˆåŠŸ");
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
